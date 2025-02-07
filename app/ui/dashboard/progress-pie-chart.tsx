@@ -40,7 +40,7 @@ export default function ProgressPieChart({ progress = 65 }) {
             <div
                 style={{
                     position: "absolute",
-                    top: "37%",
+                    top: "36%",
                     left: "54%",
                     transform: "translate(-50%, -50%)",
                     fontSize: "25px",
@@ -49,14 +49,14 @@ export default function ProgressPieChart({ progress = 65 }) {
             >
                 {progress}%
             </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "10px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "12px", height: "12px", backgroundColor: "#00C49F", borderRadius: "50%" }}></span>
-                    <p style={{ fontSize: ".8em"}}>Vivamus</p>
+                    <p style={{ fontSize: ".8em"}}>Concluído</p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "12px", height: "12px", backgroundColor: "#E0E0E0", borderRadius: "50%" }}></span>
-                    <p style={{ fontSize: ".8em"}}>Efficitur</p>
+                    <p style={{ fontSize: ".8em"}}>Restante</p>
                 </div>
             </div>
         </div>
