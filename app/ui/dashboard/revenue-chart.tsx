@@ -33,27 +33,27 @@ export default async function RevenueChart({
 
 
   return (
-    <div className="rounded-xl bg-gray-50 shadow-sm">
+    <div className="rounded-xl bg-gray-50 shadow-sm m-2" style={{ backgroundColor: "#d9d9d9" }}>
       <div className="lg:flex md:flex sm:block p-4">
         {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
         <h3 className={"font-medium text-xl md:text-2xl md:mr-12"}>
-          Levantamento
+          CARD 3
         </h3>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "12px" }}>
-          <span style={{ width: "12px", height: "12px", backgroundColor: "#93c5fd", borderRadius: "50%" }}></span>
-          <p style={{ fontSize: "1.2em" }}>Aprovadas</p>
+          <span style={{ width: "20px", height: "20px", backgroundColor: "#93c5fd", borderRadius: "50%" }}></span>
+          <p style={{ fontSize: "1.2em", fontFamily: 'lusitana' }}>Aprovadas</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "25px" }}>
-          <span style={{ width: "12px", height: "12px", backgroundColor: "#6b7280", borderRadius: "50%" }}></span>
-          <p style={{ fontSize: "1.2em" }}>Reprovadas</p>
+          <span style={{ width: "20px", height: "20px", backgroundColor: "#6b7280", borderRadius: "50%" }}></span>
+          <p style={{ fontSize: "1.2em", fontFamily: 'lusitana' }}>Reprovadas</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <CalendarIcon className="h-5 w-5 text-gray-500" />
+          <CalendarIcon className="h-8 w-8 text-gray-500" />
           <h3 className="text-sm text-gray-500 ">Last 12 months</h3>
         </div>
       </div>
-      <div className="rounded-xl bg-gray-50">
-        <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-12">
+      <div className="rounded-xl bg-gray-50 mr-2 ml-2">
+        <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-12 mb-2">
           <div
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
             style={{ height: `${chartHeight}px` }}

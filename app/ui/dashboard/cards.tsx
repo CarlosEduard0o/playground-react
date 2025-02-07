@@ -46,12 +46,12 @@ export function Card({
   const Icon = iconMap[type];
 
   return (
-    <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+    <div className="rounded-xl bg-gray-50 pl-2" style={{ backgroundColor: "#d9d9d9" }}>
       <div className="flex p-2">
         {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
         <h3 className="ml-2 text-2xl font-medium">{title}</h3>
       </div>
-      <div className={`${lusitana.className} truncate rounded-xl bg-white px-4 py-2 text-center text-xl`}>
+      <div className={`${lusitana.className}  truncate rounded-xl bg-gray-50 px-4 py-2 text-center text-xl shadow-sm`}>
         <div className="flex flex-col gap-2">
           <span>{value1}</span>
           <span>{value2}</span>
@@ -74,12 +74,12 @@ export function ProgressCard({
   const Icon = iconMap[type];
 
   return (
-    <div className="rounded-xl bg-gray-50 pr-2 shadow-sm">
+    <div className="rounded-xl bg-gray-50 pr-2 shadow-sm" style={{ backgroundColor: "#d9d9d9" }}>
       <div className="flex p-2">
         {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
         <h3 className="ml-2 text-2xl font-medium">{title}</h3>
       </div>
-      <div className={`${lusitana.className} truncate rounded-xl bg-white text-center text-2xl`}>
+      <div className={`${lusitana.className} ml-2 truncate rounded-xl bg-white text-center text-2xl`}>
         <div className="flex flex-col gap-2">
           {typeof value1 === "string" || typeof value1 === "number" ? (
             <span>{value1}</span>

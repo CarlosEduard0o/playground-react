@@ -9,8 +9,8 @@ export default function JflLogo() {
       <button className="p-2 sm:p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition">
         <ChevronLeftIcon className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
-
-      <p className="text-[28px] sm:text-[44px] leading-none">Lorem Ipsum</p>
+      
+      <p className="text-[28px] sm:text-[44px] leading-none">TÍTULO</p>
 
       <button className="p-2 sm:p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition">
         <ChevronRightIcon className="w-4 h-4 sm:w-6 sm:h-6" />

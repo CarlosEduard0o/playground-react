@@ -51,12 +51,12 @@ export default function ProgressPieChart({ progress = 65 }) {
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <span style={{ width: "12px", height: "12px", backgroundColor: "#00C49F", borderRadius: "50%" }}></span>
-                    <p style={{ fontSize: ".8em"}}>Concluído</p>
+                    <span style={{ width: "20px", height: "20px", backgroundColor: "#00C49F", borderRadius: "50%" }}></span>
+                    <p style={{ fontSize: ".8em"}}>Aprovadas: 650 peças</p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <span style={{ width: "12px", height: "12px", backgroundColor: "#E0E0E0", borderRadius: "50%" }}></span>
-                    <p style={{ fontSize: ".8em"}}>Restante</p>
+                    <span style={{ width: "20px", height: "20px", backgroundColor: "#E0E0E0", borderRadius: "50%" }}></span>
+                    <p style={{ fontSize: ".8em"}}>Restante: 350 peças</p>
                 </div>
             </div>
         </div>
