@@ -1,15 +1,16 @@
 import {
   BanknotesIcon,
   ClockIcon,
-  UserGroupIcon,
+  ChartPieIcon,
   InboxIcon,
+  ChevronDoubleUpIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 import { ReactNode } from "react";
 
 const iconMap = {
-  collected: BanknotesIcon,
-  customers: UserGroupIcon,
+  opInfo: ChevronDoubleUpIcon,
+  progressInfo: ChartPieIcon,
   pending: ClockIcon,
   invoices: InboxIcon,
 };
@@ -19,13 +20,13 @@ export default async function CardWrapper() {
     <>
       {/* NOTE: Uncomment this code in Chapter 9 */}
 
-      {/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
+      {/* <Card title="opInfo" value={totalPaidInvoices} type="opInfo" />
       <Card title="Pending" value={totalPendingInvoices} type="pending" />
       <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
       <Card
-        title="Total Customers"
-        value={numberOfCustomers}
-        type="customers"
+        title="Total progressInfo"
+        value={numberOfprogressInfo}
+        type="progressInfo"
       /> */}
     </>
   );
@@ -40,17 +41,17 @@ export function Card({
   title: string;
   value1: number | string;
   value2: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected';
+  type: 'opInfo';
 }) {
   const Icon = iconMap[type];
 
   return (
     <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
       <div className="flex p-4">
-        {Icon ? <Icon className="h-5 w-5 text-gray-700" /> : null}
-        <h3 className="ml-2 text-sm font-medium">{title}</h3>
+        {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
+        <h3 className="ml-2 text-2xl font-medium">{title}</h3>
       </div>
-      <div className={`${lusitana.className} truncate rounded-xl bg-white px-4 py-8 text-center text-2xl`}>
+      <div className={`${lusitana.className} truncate rounded-xl bg-white px-4 py-8 text-center text-xl`}>
         <div className="flex flex-col gap-2">
           <span>{value1}</span>
           <span>{value2}</span>
@@ -68,15 +69,15 @@ export function ProgressCard({
   title: string;
   value1: number | string | ReactNode;
   value2: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
+  type: "progressInfo";
 }) {
   const Icon = iconMap[type];
 
   return (
     <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
       <div className="flex p-4">
-        {Icon ? <Icon className="h-5 w-5 text-gray-700" /> : null}
-        <h3 className="ml-2 text-sm font-medium">{title}</h3>
+        {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
+        <h3 className="ml-2 text-2xl font-medium">{title}</h3>
       </div>
       <div className={`${lusitana.className} truncate rounded-xl bg-white px-4 py-8 text-center text-2xl`}>
         <div className="flex flex-col gap-2">

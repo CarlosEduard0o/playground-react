@@ -1,6 +1,6 @@
 "use client";
 
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell } from "recharts";
 import { useEffect, useState } from "react";
 
 export default function ProgressPieChart({ progress = 65 }) {
@@ -10,18 +10,18 @@ export default function ProgressPieChart({ progress = 65 }) {
         setIsClient(true);
     }, []);
 
-    if (!isClient) return null; // Evita erro de hidratação no Next.js
+    if (!isClient) return null;
 
     const data = [
         { name: "Concluído", value: progress },
         { name: "Faltando", value: 100 - progress },
     ];
 
-    const COLORS = ["#00C49F", "#E0E0E0"]; // Verde para concluído, cinza para restante
+    const COLORS = ["#00C49F", "#E0E0E0"];
 
     return (
         <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <PieChart width={200} height={200}>
+            <PieChart width={200} height={150}>
                 <Pie
                     data={data}
                     cx={100}
@@ -40,7 +40,7 @@ export default function ProgressPieChart({ progress = 65 }) {
             <div
                 style={{
                     position: "absolute",
-                    top: "38%",
+                    top: "37%",
                     left: "54%",
                     transform: "translate(-50%, -50%)",
                     fontSize: "25px",
@@ -49,8 +49,15 @@ export default function ProgressPieChart({ progress = 65 }) {
             >
                 {progress}%
             </div>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px", width: "100%" }}>
-                <Legend verticalAlign="bottom" align="center" />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "10px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ width: "12px", height: "12px", backgroundColor: "#00C49F", borderRadius: "50%" }}></span>
+                    <p style={{ fontSize: ".8em"}}>Vivamus</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ width: "12px", height: "12px", backgroundColor: "#E0E0E0", borderRadius: "50%" }}></span>
+                    <p style={{ fontSize: ".8em"}}>Efficitur</p>
+                </div>
             </div>
         </div>
     );

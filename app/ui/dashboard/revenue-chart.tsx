@@ -2,9 +2,19 @@ import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 import { Revenue } from '@/app/lib/definitions';
+import {
+  BanknotesIcon,
+  ClockIcon,
+  ChartPieIcon,
+  InboxIcon,
+  ChevronDoubleUpIcon,
+} from '@heroicons/react/24/outline';
 
-// This component is representational only.
-// For data visualization UI, check out:
+const iconMap = {
+  barGraph: ClockIcon,
+} as const;
+type IconKey = keyof typeof iconMap;
+
 // https://www.tremor.so/
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
@@ -13,9 +23,11 @@ export default async function RevenueChart({
   revenue,
 }: {
   revenue: Revenue[];
+  type: 'barGraph';
 }) {
   const chartHeight = 250;
-  // NOTE: Uncomment this code in Chapter 7
+  const someVariable: IconKey = "barGraph";
+  const Icon = iconMap[someVariable];
 
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
@@ -23,12 +35,15 @@ export default async function RevenueChart({
     return <p className="mt-4 text-gray-400">No data available.</p>;
   }
 
-  return (
-    <div className="w-full md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-      Lorem Ipsum has been the industry's
-      </h2>
 
+  return (
+    <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+      <div className="flex p-4">
+        {Icon ? <Icon className="h-8 w-8 text-gray-700" /> : null}
+        <h3 className={"font-medium text-xl md:text-2xl"}>
+          Vivamus fringilla, nunc a suscipit
+        </h3>
+      </div>
       <div className="rounded-xl bg-gray-50">
         <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-12">
           <div
